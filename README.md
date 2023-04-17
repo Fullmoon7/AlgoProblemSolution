@@ -8,6 +8,7 @@ those files just contain the Algorithm part, which means that they are not runab
 - 1041.Robot Bounded In Circle
 - 1436.Destination City
 - 1734.Decode XORed Permutation
+- 2409.Count Days Spent Together
 - 2399.Check Distances Between Same Letters
 - 2404.Most Frequent Even Element
 - 2521.Distinct Prime Factors of Product of Array

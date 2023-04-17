@@ -1,0 +1,26 @@
+#include <iostream>
+
+using namespace std;
+
+class Solution {
+public:
+    vector<int> prefixNum = vector<int> (1, 0);
+    int countDaysTogether(string arriveAlice, string leaveAlice, string arriveBob, string leaveBob) {
+        vector<int> days = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+        for(int day:days){
+            prefixNum.push_back(prefixNum.back()+day);
+            cout << prefixNum.back();
+        }
+        int Alice1 = getDayOfYear(arriveAlice);
+        int Alice2 = getDayOfYear(leaveAlice);
+        int Bob1 = getDayOfYear(arriveBob);
+        int Bob2 = getDayOfYear(leaveBob);
+        return max(0, min(Bob2,Alice2) - max(Alice1,Bob1) + 1);
+    }
+
+    int getDayOfYear(string dayStr){
+        int Mon = stoi(dayStr.substr(0,2));
+        int Day = stoi(dayStr.substr(3));
+        return prefixNum[Mon-1] + Day;
+    }
+};
